@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: '2em',
     },
     [theme.breakpoints.down('xs')]: {
-      marginBottom: '1.25em',
+      marginBottom: '1.8em',
     },
   },
   logoContainer: {
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
       height: '6em',
     },
     [theme.breakpoints.down('xs')]: {
-      height: '5em',
+      height: '5.5em',
     },
   },
   logo: {
@@ -123,7 +123,9 @@ const Header = (props) => {
   const location = useLocation()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.down('md'))
-  const iOS = typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent)
+  const iOS =
+    typeof navigator !== 'undefined' &&
+    /iPad|iPhone|iPod/.test(navigator.userAgent)
 
   const [tabValue, setTabValue] = useState(0)
   const [anchorEl, setAnchorEl] = useState(null)
@@ -196,7 +198,11 @@ const Header = (props) => {
 
   const tabs = (
     <>
-      <Tabs value={tabValue} className={classes.tabContainer} indicatorColor='primary'>
+      <Tabs
+        value={tabValue}
+        className={classes.tabContainer}
+        indicatorColor='primary'
+      >
         {routes.map((route) => (
           <Tab
             key={route.activeIndex}
@@ -231,7 +237,10 @@ const Header = (props) => {
             component={Link}
             to={option.link}
             onClick={handleCloseMenu}
-            classes={{root: classes.menuItem, selected: classes.menuItemSelected}}
+            classes={{
+              root: classes.menuItem,
+              selected: classes.menuItemSelected,
+            }}
             selected={option.selectedIndex === selectedOption}
           >
             {option.name}
@@ -269,9 +278,15 @@ const Header = (props) => {
               to={route.link}
               onClick={() => setOpenDrawer(false)}
               selected={route.activeIndex === tabValue}
-              classes={{root: classes.drawerItem, selected: classes.drawerItemSelected}}
+              classes={{
+                root: classes.drawerItem,
+                selected: classes.drawerItemSelected,
+              }}
             >
-              <ListItemText className={classes.drawerItemText} disableTypography>
+              <ListItemText
+                className={classes.drawerItemText}
+                disableTypography
+              >
                 {route.name}
               </ListItemText>
             </ListItem>
