@@ -1,6 +1,7 @@
 import {Grid, makeStyles} from '@material-ui/core'
 import React from 'react'
 import HeroBlock from './HeroBlock'
+import SevicesBlock from './SevicesBlock'
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -18,6 +19,9 @@ const LandingPage = () => {
     <Grid direction='column' container className={classes.mainContainer}>
       <Grid item>
         <HeroBlock />
+      </Grid>
+      <Grid item>
+        <SevicesBlock />
       </Grid>
     </Grid>
   )

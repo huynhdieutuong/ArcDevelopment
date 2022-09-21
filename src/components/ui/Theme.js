@@ -2,6 +2,7 @@ import {createTheme} from '@material-ui/core'
 
 const arcBlue = '#0B72B9'
 const arcOrange = '#FFBA60'
+const arcGrey = '#868686'
 
 let theme = createTheme({
   palette: {
@@ -9,6 +10,7 @@ let theme = createTheme({
       blue: arcBlue,
       orange: arcOrange,
       white: 'white',
+      grey: arcGrey,
     },
     primary: {
       main: arcBlue,
@@ -34,6 +36,18 @@ theme = createTheme(theme, {
       fontWeight: '700',
       color: theme.palette.primary.main,
       lineHeight: 1.5,
+    },
+    h3: {
+      fontFamily: 'Raleway',
+      fontSize: '1.75rem',
+      fontWeight: '700',
+      color: theme.palette.primary.main,
+      lineHeight: 1,
+    },
+    subtitle1: {
+      fontSize: '1.25rem',
+      fontWeight: '300',
+      color: theme.palette.common.grey,
     },
   },
   buttons: {
