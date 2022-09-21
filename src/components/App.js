@@ -1,6 +1,7 @@
 import {CssBaseline} from '@material-ui/core'
 import {ThemeProvider as MuiThemeProvider} from '@material-ui/core/styles'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import LandingPage from './LandingPage'
 import Footer from './ui/Footer'
 import Header from './ui/Header'
 import theme from './ui/Theme'
@@ -15,7 +16,7 @@ function App() {
           <Route
             exact
             path='/'
-            component={() => <div style={{height: '800px'}}>Home</div>}
+            component={LandingPage}
           />
           <Route exact path='/services' component={() => <div>Services</div>} />
           <Route

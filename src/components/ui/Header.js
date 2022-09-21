@@ -64,12 +64,10 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 10,
     marginLeft: 25,
   },
-  button: {
-    ...theme.typography.estimate,
+  freeBtn: {
+    ...theme.buttons.estimate,
     marginLeft: 50,
     marginRight: 25,
-    height: 45,
-    borderRadius: 50,
   },
   menu: {
     backgroundColor: theme.palette.common.blue,
@@ -100,6 +98,10 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerItemText: {
     ...theme.typography.tab,
+  },
+  drawerItemTextEstimate: {
+    ...theme.typography.tab,
+    fontFamily: 'Pacifico',
   },
   drawerItem: {
     opacity: 0.7,
@@ -216,7 +218,7 @@ const Header = (props) => {
           />
         ))}
       </Tabs>
-      <Button variant='contained' color='secondary' className={classes.button}>
+      <Button variant='contained' className={classes.freeBtn}>
         Free Estimate
       </Button>
       <Menu
@@ -297,7 +299,10 @@ const Header = (props) => {
             onClick={() => setOpenDrawer(false)}
             className={classes.drawerItemEstimate}
           >
-            <ListItemText className={classes.drawerItemText} disableTypography>
+            <ListItemText
+              className={classes.drawerItemTextEstimate}
+              disableTypography
+            >
               Free Estimate
             </ListItemText>
           </ListItem>
