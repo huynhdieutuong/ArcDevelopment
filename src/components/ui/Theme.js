@@ -10,6 +10,7 @@ let theme = createTheme({
       blue: arcBlue,
       orange: arcOrange,
       white: 'white',
+      black: 'black',
       grey: arcGrey,
     },
     primary: {

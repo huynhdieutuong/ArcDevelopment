@@ -1,6 +1,9 @@
 import {Grid, makeStyles} from '@material-ui/core'
 import React from 'react'
+import CallToActionBlock from './CallToActionBlock'
 import HeroBlock from './HeroBlock'
+import InformationBlock from './InformationBlock'
+import RevolutionBlock from './RevolutionBlock'
 import SevicesBlock from './SevicesBlock'
 
 const useStyles = makeStyles((theme) => ({
@@ -22,6 +25,15 @@ const LandingPage = () => {
       </Grid>
       <Grid item>
         <SevicesBlock />
+      </Grid>
+      <Grid item>
+        <RevolutionBlock />
+      </Grid>
+      <Grid item>
+        <InformationBlock />
+      </Grid>
+      <Grid item>
+        <CallToActionBlock />
       </Grid>
     </Grid>
   )
