@@ -4,6 +4,7 @@ import React from 'react'
 import background from '../assets/background.jpg'
 import mobileBackground from '../assets/mobileBackground.jpg'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -52,30 +53,33 @@ const CallToActionBlock = () => {
   const classes = useStyles()
 
   return (
-    <Grid container className={classes.container}>
-      <Grid item className={classes.item}>
-        <Typography variant='h3' className={classes.title} gutterBottom>
-          Simple Software.
-          <br />
-          Revolutionary Results.
-        </Typography>
-        <Typography variant='subtitle1' className={classes.subTitle}>
-          Take advantage of the 21st Century.
-        </Typography>
-        <Button
-          variant='outlined'
-          endIcon={<ArrowForwardIcon />}
-          className={classes.learnBtn}
-        >
-          Learn More
-        </Button>
+    <>
+      <Link id='call-to-action' />
+      <Grid container className={classes.container}>
+        <Grid item className={classes.item}>
+          <Typography variant='h3' className={classes.title} gutterBottom>
+            Simple Software.
+            <br />
+            Revolutionary Results.
+          </Typography>
+          <Typography variant='subtitle1' className={classes.subTitle}>
+            Take advantage of the 21st Century.
+          </Typography>
+          <Button
+            variant='outlined'
+            endIcon={<ArrowForwardIcon />}
+            className={classes.learnBtn}
+          >
+            Learn More
+          </Button>
+        </Grid>
+        <Grid item className={[classes.item, classes.itemRight]}>
+          <Button variant='contained' className={classes.freeBtn}>
+            Free Estimate
+          </Button>
+        </Grid>
       </Grid>
-      <Grid item className={[classes.item, classes.itemRight]}>
-        <Button variant='contained' className={classes.freeBtn}>
-          Free Estimate
-        </Button>
-      </Grid>
-    </Grid>
+    </>
   )
 }
 

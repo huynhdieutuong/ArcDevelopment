@@ -10,32 +10,32 @@ import instagram from '../../assets/instagram.svg'
 const routes = [
   [{name: 'Home', link: '/'}],
   [
-    {name: 'Services', link: '/services'},
+    {name: 'Services', link: '#services'},
     {
       name: 'Custom Software Development',
-      link: '/customsoftware',
+      link: '#customsoftware',
     },
     {
       name: 'iOS/Android App Development',
-      link: '/mobileapps',
+      link: '#mobileapps',
     },
     {
       name: 'Website Development',
-      link: '/websites',
+      link: '#websites',
     },
   ],
   [
-    {name: 'The Revolution', link: '/revolution'},
-    {name: 'Vision', link: '/vision'},
-    {name: 'Technology', link: '/technology'},
-    {name: 'Process', link: '/process'},
+    {name: 'The Revolution', link: '#revolution'},
+    // {name: 'Vision', link: '/vision'},
+    // {name: 'Technology', link: '/technology'},
+    // {name: 'Process', link: '/process'},
   ],
   [
-    {name: 'About Us', link: '/about'},
-    {name: 'History', link: '/history'},
-    {name: 'Team', link: '/team'},
+    {name: 'About Us', link: '#about'},
+    // {name: 'History', link: '/history'},
+    // {name: 'Team', link: '/team'},
   ],
-  [{name: 'Contact Us', link: '/contact'}],
+  [{name: 'Contact Us', link: '#contact'}],
 ]
 
 const socials = [

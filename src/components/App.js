@@ -13,12 +13,8 @@ function App() {
         <CssBaseline />
         <Header />
         <Switch>
-          <Route
-            exact
-            path='/'
-            component={LandingPage}
-          />
-          <Route exact path='/services' component={() => <div>Services</div>} />
+          <Route exact path='/' component={LandingPage} />
+          {/* <Route exact path='/services' component={() => <div>Services</div>} />
           <Route
             exact
             path='/customsoftware'
@@ -44,7 +40,7 @@ function App() {
             exact
             path='/contact'
             component={() => <div>Contact Us</div>}
-          />
+          /> */}
         </Switch>
         <Footer />
       </BrowserRouter>

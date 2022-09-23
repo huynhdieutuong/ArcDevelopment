@@ -9,6 +9,7 @@ import React from 'react'
 
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 import revolutionBackground from '../assets/repeatingBackground.svg'
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -59,26 +60,29 @@ const RevolutionBlock = () => {
   const classes = useStyles()
 
   return (
-    <div className={classes.container}>
-      <Card className={classes.card}>
-        <CardContent className={classes.cardContent}>
-          <Typography variant='h3' className={classes.title} gutterBottom>
-            The Revolution
-          </Typography>
-          <Typography variant='subtitle1'>
-            Visionary insights coupled with cutting-edge technology is a recipe
-            for revolution.
-          </Typography>
-          <Button
-            variant='outlined'
-            endIcon={<ArrowForwardIcon />}
-            className={classes.learnBtn}
-          >
-            Learn More
-          </Button>
-        </CardContent>
-      </Card>
-    </div>
+    <>
+      <Link id='revolution' />
+      <div className={classes.container}>
+        <Card className={classes.card}>
+          <CardContent className={classes.cardContent}>
+            <Typography variant='h3' className={classes.title} gutterBottom>
+              The Revolution
+            </Typography>
+            <Typography variant='subtitle1'>
+              Visionary insights coupled with cutting-edge technology is a
+              recipe for revolution.
+            </Typography>
+            <Button
+              variant='outlined'
+              endIcon={<ArrowForwardIcon />}
+              className={classes.learnBtn}
+            >
+              Learn More
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    </>
   )
 }
 

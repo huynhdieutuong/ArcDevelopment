@@ -150,37 +150,37 @@ const Header = (props) => {
       {name: 'Home', link: '/', activeIndex: 0},
       {
         name: 'Services',
-        link: '/services',
+        link: '#services',
         activeIndex: 1,
         ariaControl: 'simple-menu',
         ariaHaspopup: true,
         mouseOver: (e) => handleClickMenu(e),
       },
-      {name: 'The Revolution', link: '/revolution', activeIndex: 2},
-      {name: 'About Us', link: '/about', activeIndex: 3},
-      {name: 'Contact Us', link: '/contact', activeIndex: 4},
+      {name: 'The Revolution', link: '#revolution', activeIndex: 2},
+      {name: 'About Us', link: '#about', activeIndex: 3},
+      {name: 'Contact Us', link: '#contact', activeIndex: 4},
     ],
     []
   )
 
   const menuOptions = useMemo(
     () => [
-      {name: 'Services', link: '/services', activeIndex: 1, selectedIndex: 0},
+      {name: 'Services', link: '#services', activeIndex: 1, selectedIndex: 0},
       {
         name: 'Custom Software Development',
-        link: '/customsoftware',
+        link: '#customsoftware',
         activeIndex: 1,
         selectedIndex: 1,
       },
       {
         name: 'iOS/Android App Development',
-        link: '/mobileapps',
+        link: '#mobileapps',
         activeIndex: 1,
         selectedIndex: 2,
       },
       {
         name: 'Website Development',
-        link: '/websites',
+        link: '#websites',
         activeIndex: 1,
         selectedIndex: 3,
       },
@@ -189,14 +189,24 @@ const Header = (props) => {
   )
 
   useEffect(() => {
-    const route =
-      routes.find((r) => r.link === location.pathname) ||
-      menuOptions.find((o) => o.link === location.pathname)
+    const isHome = location.hash === ''
+    let route =
+      routes.find((r) => r.link === location.hash) ||
+      menuOptions.find((o) => o.link === location.hash)
+    if (isHome) route = routes[0]
+
+    // Scroll
+    const ele = document.getElementById(location.hash.replace('#', ''))
+    window.scrollTo({
+      behavior: 'smooth',
+      top: isHome ? 0 : ele.offsetTop,
+    })
+
     if (route) {
       setTabValue(route.activeIndex)
       setSelectedOption(route.selectedIndex)
     }
-  }, [routes, menuOptions, location.pathname])
+  }, [routes, menuOptions, location])
 
   const tabs = (
     <>
@@ -218,7 +228,12 @@ const Header = (props) => {
           />
         ))}
       </Tabs>
-      <Button variant='contained' className={classes.freeBtn}>
+      <Button
+        variant='contained'
+        className={classes.freeBtn}
+        component={Link}
+        to='#call-to-action'
+      >
         Free Estimate
       </Button>
       <Menu
@@ -298,6 +313,8 @@ const Header = (props) => {
             button
             onClick={() => setOpenDrawer(false)}
             className={classes.drawerItemEstimate}
+            component={Link}
+            to='#call-to-action'
           >
             <ListItemText
               className={classes.drawerItemTextEstimate}

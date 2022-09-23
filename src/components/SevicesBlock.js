@@ -5,15 +5,18 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 import customSoftwareIcon from '../assets/Custom Software Icon.svg'
 import mobileAppsIcon from '../assets/mobileIcon.svg'
 import websitesIcon from '../assets/websiteIcon.svg'
+import {Link} from 'react-router-dom'
 
 const services = [
   {
+    id: 'customsoftware',
     title: 'Custom Software Development',
     sub1: 'Save Energy. Save Time. Save Money.',
     sub2: 'Complete digital solutions, from investigation to <span>celebration.</span>',
     image: customSoftwareIcon,
   },
   {
+    id: 'mobileapps',
     title: 'iOS/Android App Development',
     sub1: 'Extend Functionality. Extend Access. Increase Engagement.',
     sub2: 'Integrate your web experience or create a standalone app <br/> with either mobile platform.',
@@ -21,6 +24,7 @@ const services = [
     isRight: true,
   },
   {
+    id: 'websites',
     title: 'Website Development',
     sub1: 'Reach More. Discover More. Sell More.',
     sub2: 'Optimized for Search Engines, built for speed.',
@@ -82,6 +86,7 @@ const SevicesBlock = () => {
 
   return (
     <>
+      <Link id='services' />
       <Grid
         container
         direction='column'
@@ -90,7 +95,8 @@ const SevicesBlock = () => {
       >
         {services.map((service) => (
           <Grid
-            key={service.title}
+            id={service.id}
+            key={service.id}
             item
             className={service.isRight && classes.rightItem}
           >

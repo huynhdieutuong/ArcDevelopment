@@ -3,6 +3,7 @@ import React from 'react'
 
 import infoBackground from '../assets/infoBackground.svg'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -54,38 +55,42 @@ const InformationBlock = () => {
   const classes = useStyles()
 
   return (
-    <Grid container className={classes.container}>
-      <Grid item className={classes.item}>
-        <Typography variant='h3' className={classes.title} gutterBottom>
-          Aboud Us
-        </Typography>
-        <Typography variant='subtitle1' className={classes.subTitle}>
-          Let's get personal
-        </Typography>
-        <Button
-          variant='outlined'
-          endIcon={<ArrowForwardIcon />}
-          className={classes.learnBtn}
-        >
-          Learn More
-        </Button>
+    <>
+      <Link id='about' />
+      <Link id='contact' />
+      <Grid container className={classes.container}>
+        <Grid item className={classes.item}>
+          <Typography variant='h3' className={classes.title} gutterBottom>
+            Aboud Us
+          </Typography>
+          <Typography variant='subtitle1' className={classes.subTitle}>
+            Let's get personal
+          </Typography>
+          <Button
+            variant='outlined'
+            endIcon={<ArrowForwardIcon />}
+            className={classes.learnBtn}
+          >
+            Learn More
+          </Button>
+        </Grid>
+        <Grid item className={[classes.item, classes.itemRight]}>
+          <Typography variant='h3' className={classes.title} gutterBottom>
+            Contact Us
+          </Typography>
+          <Typography variant='subtitle1' className={classes.subTitle}>
+            Say hello!
+          </Typography>
+          <Button
+            variant='outlined'
+            endIcon={<ArrowForwardIcon />}
+            className={classes.learnBtn}
+          >
+            Learn More
+          </Button>
+        </Grid>
       </Grid>
-      <Grid item className={[classes.item, classes.itemRight]}>
-        <Typography variant='h3' className={classes.title} gutterBottom>
-          Contact Us
-        </Typography>
-        <Typography variant='subtitle1' className={classes.subTitle}>
-          Say hello!
-        </Typography>
-        <Button
-          variant='outlined'
-          endIcon={<ArrowForwardIcon />}
-          className={classes.learnBtn}
-        >
-          Learn More
-        </Button>
-      </Grid>
-    </Grid>
+    </>
   )
 }
 
